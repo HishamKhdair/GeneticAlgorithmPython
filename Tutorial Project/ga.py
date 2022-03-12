@@ -1,10 +1,7 @@
 import numpy
 
 def cal_pop_fitness(equation_inputs, pop):
-    # Calculating the fitness value of each solution in the current population.
-    # The fitness function calulates the sum of products between each input and its corresponding weight.
-    fitness = numpy.sum(pop*equation_inputs, axis=1)
-    return fitness
+    return numpy.sum(pop*equation_inputs, axis=1)
 
 def select_mating_pool(pop, fitness, num_parents):
     # Selecting the best individuals in the current generation as parents for producing the offspring of the next generation.
@@ -37,7 +34,7 @@ def mutation(offspring_crossover, num_mutations=1):
     # Mutation changes a number of genes as defined by the num_mutations argument. The changes are random.
     for idx in range(offspring_crossover.shape[0]):
         gene_idx = mutations_counter - 1
-        for mutation_num in range(num_mutations):
+        for _ in range(num_mutations):
             # The random value to be added to the gene.
             random_value = numpy.random.uniform(-1.0, 1.0, 1)
             offspring_crossover[idx, gene_idx] = offspring_crossover[idx, gene_idx] + random_value

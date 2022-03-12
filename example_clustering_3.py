@@ -97,10 +97,7 @@ def cluster_data(solution, solution_idx):
 def fitness_func(solution, solution_idx):
     _, _, _, _, clusters_sum_dist = cluster_data(solution, solution_idx)
 
-    # The tiny value 0.00000001 is added to the denominator in case the average distance is 0.
-    fitness = 1.0 / (numpy.sum(clusters_sum_dist) + 0.00000001)
-
-    return fitness
+    return 1.0 / (numpy.sum(clusters_sum_dist) + 0.00000001)
 
 num_clusters = 3
 feature_vector_length = data.shape[1]

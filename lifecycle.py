@@ -6,8 +6,7 @@ desired_output = 44
 
 def fitness_func(solution, solution_idx):
     output = numpy.sum(solution*function_inputs)
-    fitness = 1.0 / (numpy.abs(output - desired_output) + 0.000001)
-    return fitness
+    return 1.0 / (numpy.abs(output - desired_output) + 0.000001)
 
 fitness_function = fitness_func
 

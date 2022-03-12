@@ -13,8 +13,7 @@ desired_output = 44 # Function output.
 
 def fitness_func(solution, solution_idx):
     output = numpy.sum(solution*function_inputs)
-    fitness = 1.0 / (numpy.abs(output - desired_output) + 0.000001)
-    return fitness
+    return 1.0 / (numpy.abs(output - desired_output) + 0.000001)
 
 num_generations = 100 # Number of generations.
 num_parents_mating = 10 # Number of solutions to be selected as parents in the mating pool.

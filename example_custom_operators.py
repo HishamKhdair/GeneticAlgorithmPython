@@ -16,9 +16,7 @@ desired_output = 44
 def fitness_func(solution, solution_idx):
     output = numpy.sum(solution * equation_inputs)
 
-    fitness = 1.0 / (numpy.abs(output - desired_output) + 0.000001)
-
-    return fitness
+    return 1.0 / (numpy.abs(output - desired_output) + 0.000001)
 
 def parent_selection_func(fitness, num_parents, ga_instance):
     # Selects the best {num_parents} parents. Works as steady-state selection.
